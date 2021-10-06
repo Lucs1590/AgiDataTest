@@ -3,7 +3,8 @@ import numpy as np
 
 
 def minha_funcao(dados, status_resposta: str):
-    ...
+    if (not isinstance(status_resposta, str)):
+        raise TypeError('invalid input, try to send a string with "S" or "N".')
 
 
 def main():
