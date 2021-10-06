@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 import pandas as pd
 
-import src.main
+import src.main as main
 
 
 class TestFunctionUnit(unittest.TestCase):
@@ -28,22 +28,18 @@ class TestFunctionUnit(unittest.TestCase):
             ['Grupo B', 'N'],
         ]), columns=['covariavel', 'contratou'])
 
+    def test_minha_funcao_tipos(self):
+        with self.assertRaises(TypeError):
+            main.minha_funcao(self.df, 1)
 
-def test_minha_funcao_tipos(self):
-    with self.assertRaises(TypeError):
-        src.main.minha_funcao(self.df, 1)
+    def test_minha_funcao_retorno_S(self):
+        ...
 
+    def test_minha_funcao_retorno_N(self):
+        ...
 
-def test_minha_funcao_retorno_S(self):
-    ...
-
-
-def test_minha_funcao_retorno_N(self):
-    ...
-
-
-def test_minha_funcao_tamanho(self):
-    ...
+    def test_minha_funcao_tamanho(self):
+        ...
 
 
 if __name__ == '__main__':
