@@ -2,10 +2,10 @@ import unittest
 import numpy as np
 import pandas as pd
 
-import src.main as main
+import src.main
 
 
-class TestUnit(unittest.TestCase):
+class TestFunctionUnit(unittest.TestCase):
     def setUp(self):
         self.df = pd.DataFrame(np.array([
             ['Grupo A', 'S'],
@@ -31,7 +31,7 @@ class TestUnit(unittest.TestCase):
 
 def test_minha_funcao_tipos(self):
     with self.assertRaises(TypeError):
-        main.minha_funcao(self.df, 1)
+        src.main.minha_funcao(self.df, 1)
 
 
 def test_minha_funcao_retorno_S(self):
