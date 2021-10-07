@@ -32,6 +32,10 @@ def minha_funcao(dados: pd.DataFrame, status_resposta: str) -> pd.DataFrame:
 
 
 def main():
+    """ # Main
+    Essa é a função responsável por chamar a `minha_funcao` e definir a ordem
+     do código.
+    """
     data = np.array([
         ['Grupo A', 'S'],
         ['Grupo A', 'S'],
