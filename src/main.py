@@ -3,6 +3,19 @@ import numpy as np
 
 
 def minha_funcao(dados: pd.DataFrame, status_resposta: str) -> pd.DataFrame:
+    """ # Minha Função
+    Função para calculo de grupo, quantidade de registros de cada grupo e a taxa de resposta.
+
+    Args:
+        dados (pd.DataFrame): Dataframe com grupos e resposta se foi contratado ou não;
+        status_resposta (str): String para filtro de contratação.
+
+    Raises:
+        TypeError: Erro devido a inserção de valor que não é string no segundo parâmetro.
+
+    Returns:
+        pd.DataFrame: Dataframe com grupos, quantidade e taxa de resposta calculada.
+    """
     if (not isinstance(status_resposta, str)):
         raise TypeError('invalid input, try to send a string with "S" or "N".')
     df = dados.groupby('covariavel').count()
