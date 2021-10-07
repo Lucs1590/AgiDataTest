@@ -47,7 +47,8 @@ class TestFunctionUnit(unittest.TestCase):
                          ['Grupo A', 8, 0.5], ['Grupo B', 10, 0.7]])
 
     def test_minha_funcao_tamanho(self):
-        ...
+        df = main.minha_funcao(self.df, "N")
+        self.assertEqual(len(df.index), 2)
 
 
 if __name__ == '__main__':
