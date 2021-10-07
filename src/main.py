@@ -2,9 +2,14 @@ import pandas as pd
 import numpy as np
 
 
-def minha_funcao(dados, status_resposta: str):
+def minha_funcao(dados: pd.DataFrame, status_resposta: str) -> pd.DataFrame:
     if (not isinstance(status_resposta, str)):
         raise TypeError('invalid input, try to send a string with "S" or "N".')
+    df = dados.groupby('covariavel').count()
+    df['taxa_resposta'] = (dados[(dados.contratou == status_resposta)].groupby(
+        'covariavel').count() / dados.groupby('covariavel').count()).contratou.to_list()
+    df = df.rename(columns={"contratou": "n"})
+    return df.reset_index()
 
 
 def main():
