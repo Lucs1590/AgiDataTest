@@ -28,25 +28,25 @@ class TestFunctionUnit(unittest.TestCase):
             ['Grupo B', 'N'],
         ]), columns=['covariavel', 'contratou'])
 
-    def test_erro_parametro(self):
+    def test_wrong_param(self):
         with self.assertRaises(TypeError):
             main.minha_funcao(self.df, 1)
 
-    def test_tipo_retorno(self):
+    def test_return_type(self):
         df = main.minha_funcao(self.df, "S")
         self.assertIsInstance(df, pd.DataFrame)
 
-    def test_minha_funcao_retorno_S(self):
+    def test_positive_hiring(self):
         df = main.minha_funcao(self.df, "S")
         self.assertEqual(df.values.tolist(), [
                          ['Grupo A', 8, 0.5], ['Grupo B', 10, 0.3]])
 
-    def test_minha_funcao_retorno_N(self):
+    def test_negative_hiring(self):
         df = main.minha_funcao(self.df, "N")
         self.assertEqual(df.values.tolist(), [
                          ['Grupo A', 8, 0.5], ['Grupo B', 10, 0.7]])
 
-    def test_minha_funcao_tamanho(self):
+    def test_return_lenght(self):
         df = main.minha_funcao(self.df, "N")
         self.assertEqual(len(df.index), 2)
 

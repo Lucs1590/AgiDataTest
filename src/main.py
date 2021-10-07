@@ -3,22 +3,22 @@ import numpy as np
 
 
 def minha_funcao(dados: pd.DataFrame, status_resposta: str) -> pd.DataFrame:
-    """ # Minha Função
-    Função para calculo de grupo, quantidade de registros de cada
-     grupo e a taxa de resposta.
+    """ # Minha Funcao
+     Function to calculate group, number of records for each
+      group and the response rate.
 
-    Args:
-        dados (pd.DataFrame): Dataframe com grupos e resposta se
-         foi contratado ou não;
-        status_resposta (str): String para filtro de contratação.
+     Args:
+        data (pd.DataFrame): Dataframe with groups and answer if
+          was hired or not;
+        response_status (str): String for hiring filter.
 
-    Raises:
-        TypeError: Erro devido a inserção de valor que não é string
-         no segundo parâmetro.
+     Raises:
+        TypeError: Error due to insertion of non-string value
+          in the second parameter.
 
-    Returns:
-        pd.DataFrame: Dataframe com grupos, quantidade e taxa de
-         resposta calculada.
+     Returns:
+        pd.DataFrame: Dataframe with groups, numb. of register
+         and rate of calculated answer.
     """
     if (not isinstance(status_resposta, str)):
         raise TypeError('invalid input, try to send a string with "S" or "N".')
@@ -33,8 +33,8 @@ def minha_funcao(dados: pd.DataFrame, status_resposta: str) -> pd.DataFrame:
 
 def main():
     """ # Main
-    Essa é a função responsável por chamar a `minha_funcao` e definir a ordem
-     do código.
+     This is the function responsible for calling `minha_funcao` and defining
+      the code order.
     """
     data = np.array([
         ['Grupo A', 'S'],
@@ -57,10 +57,10 @@ def main():
         ['Grupo B', 'N'],
     ])
     bank_df = pd.DataFrame(data, columns=['covariavel', 'contratou'])
-    df_positivo = minha_funcao(bank_df, status_resposta="S")
-    df_negativo = minha_funcao(bank_df, status_resposta="N")
-    print('\n{}\n'.format(df_positivo))
-    print('\n{}\n'.format(df_negativo))
+    positive_df = minha_funcao(bank_df, status_resposta="S")
+    negative_df = minha_funcao(bank_df, status_resposta="N")
+    print('\n{}\n'.format(positive_df))
+    print('\n{}\n'.format(negative_df))
 
 
 if __name__ == '__main__':
