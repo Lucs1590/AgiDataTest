@@ -28,9 +28,13 @@ class TestFunctionUnit(unittest.TestCase):
             ['Grupo B', 'N'],
         ]), columns=['covariavel', 'contratou'])
 
-    def test_minha_funcao_tipos(self):
+    def test_erro_parametro(self):
         with self.assertRaises(TypeError):
             main.minha_funcao(self.df, 1)
+
+    def test_tipo_retorno(self):
+        df = main.minha_funcao(self.df, "S")
+        self.assertIsInstance(df, pd.DataFrame)
 
     def test_minha_funcao_retorno_S(self):
         ...
