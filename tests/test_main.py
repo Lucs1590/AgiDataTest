@@ -42,7 +42,9 @@ class TestFunctionUnit(unittest.TestCase):
                          ['Grupo A', 8, 0.5], ['Grupo B', 10, 0.3]])
 
     def test_minha_funcao_retorno_N(self):
-        ...
+        df = main.minha_funcao(self.df, "N")
+        self.assertEqual(df.values.tolist(), [
+                         ['Grupo A', 8, 0.5], ['Grupo B', 10, 0.7]])
 
     def test_minha_funcao_tamanho(self):
         ...
