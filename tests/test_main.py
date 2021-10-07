@@ -37,7 +37,9 @@ class TestFunctionUnit(unittest.TestCase):
         self.assertIsInstance(df, pd.DataFrame)
 
     def test_minha_funcao_retorno_S(self):
-        ...
+        df = main.minha_funcao(self.df, "S")
+        self.assertEqual(df.values.tolist(), [
+                         ['Grupo A', 8, 0.5], ['Grupo B', 10, 0.3]])
 
     def test_minha_funcao_retorno_N(self):
         ...
