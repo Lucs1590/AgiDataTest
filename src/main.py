@@ -36,6 +36,8 @@ def main():
     bank_df = pd.DataFrame(data, columns=['covariavel', 'contratou'])
     df_positivo = minha_funcao(bank_df, status_resposta="S")
     df_negativo = minha_funcao(bank_df, status_resposta="N")
+    print('\n{}\n'.format(df_positivo))
+    print('\n{}\n'.format(df_negativo))
 
 
 if __name__ == '__main__':
